@@ -1,0 +1,116 @@
+﻿<Window x:Class="CmsProject.CourseSectionDialog"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CmsProject"
+        mc:Ignorable="d" 
+        xmlns:util="clr-namespace:Wpf.Util" ResizeMode="NoResize" WindowStyle="None"
+         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        Title="CourseSectionDialog" Height="575.409" Width="670.041" Background="LightGray" WindowStartupLocation="CenterOwner">
+    <Border BorderBrush="#FF0069C0" BorderThickness="3" Grid.ColumnSpan="2">
+        <Grid HorizontalAlignment="Left" Width="670" Margin="0,0,-8,1">
+            <StackPanel VerticalAlignment="Top">
+                <Grid Background="#FF0069C0" Height="10"/>
+            </StackPanel>
+            <Label Content="Section Selection" HorizontalAlignment="Left" Margin="21,21,0,0" VerticalAlignment="Top" Width="342" Height="47" FontSize="36" FontWeight="Bold" FontFamily="Vijaya" Foreground="#FF0069C0"/>
+            <Label Content="Course Title" HorizontalAlignment="Left" Margin="21,81,0,0" VerticalAlignment="Top" Width="157" Height="33" FontSize="16" FontWeight="Bold" Foreground="#FF0069C0"/>
+            <Button Background="#38a700" Name="btAdd" Content="Add" HorizontalAlignment="Left" Margin="324,318,0,0" VerticalAlignment="Top" Width="101" Height="40"  Foreground="White" RenderTransformOrigin="0.882,1.857" Click="btAdd_Click"/>
+            <Button Name="btBack" Content="Back" HorizontalAlignment="Left" Margin="184,318,0,0" VerticalAlignment="Top" Width="101" Height="40" Background="#FF0069C0" Foreground="White" RenderTransformOrigin="0.882,1.857" Click="btBack_Click"/>
+            <Label Content="Start Date" HorizontalAlignment="Left" Margin="21,129,0,0" VerticalAlignment="Top" Width="157" Height="33" FontSize="16" FontWeight="Bold" Foreground="#FF0069C0"/>
+            <Label Content="End Date" HorizontalAlignment="Left" Margin="21,158,0,0" VerticalAlignment="Top" Width="157" Height="33" FontSize="16" FontWeight="Bold" Foreground="#FF0069C0"/>
+            <Label Content="Teacher" HorizontalAlignment="Left" Margin="21,267,0,0" VerticalAlignment="Top" Width="157" Height="33" FontSize="16" FontWeight="Bold" Foreground="#FF0069C0"/>
+
+            <DatePicker  Foreground="#FF0069C0" Name="dateStart" HorizontalAlignment="Left" Margin="111,134,0,0" VerticalAlignment="Top" Width="212"/>
+            <DatePicker  Foreground="#FF0069C0" Name="dateEnd" HorizontalAlignment="Left" Margin="111,167,0,0" VerticalAlignment="Top" Width="212"/>
+            <ComboBox Name="comboTeacher" HorizontalAlignment="Left" Margin="111,272,0,0" VerticalAlignment="Top" Width="212"/>
+            <Label   Foreground="#FF164974"  FontSize="16" FontWeight="Bold" Name="lblCourseName" Content="Course Name" HorizontalAlignment="Left" Margin="144,85,0,0" VerticalAlignment="Top" Width="99" Height="33"/>
+            <Label Content="Course Id" HorizontalAlignment="Left" Margin="315,81,0,0" VerticalAlignment="Top" Width="157" Height="33" FontSize="16" FontWeight="Bold" Foreground="#FF0069C0"/>
+            <Label  Name="lblCourseId" Foreground="#FF164974"  FontSize="16" FontWeight="Bold"  Content="Course Id" HorizontalAlignment="Left" Margin="425,85,0,0" VerticalAlignment="Top" Width="99" Height="33"/>
+            <Label Content="Start Time" HorizontalAlignment="Left" Margin="21,196,0,0" VerticalAlignment="Top" Width="157" Height="33" FontSize="16" FontWeight="Bold" Foreground="#FF0069C0"/>
+            <Label Content="End Time" HorizontalAlignment="Left" Margin="21,234,0,0" VerticalAlignment="Top" Width="157" Height="33" FontSize="16" FontWeight="Bold" Foreground="#FF0069C0"/>
+            <ComboBox Name="comboStartTime" HorizontalAlignment="Left" Margin="111,201,0,0" VerticalAlignment="Top" Width="212">
+                <ComboBoxItem Content="9:00 AM"/>
+                <ComboBoxItem Content="9:30 AM"/>
+                <ComboBoxItem Content="10:00 AM"/>
+                <ComboBoxItem Content="10:30 AM"/>
+                <ComboBoxItem Content="11:00 AM"/>
+                <ComboBoxItem Content="11:30 AM"/>
+                <ComboBoxItem Content="12:00 PM"/>
+                <ComboBoxItem Content="12:30 PM"/>
+                <ComboBoxItem Content="1:00 PM"/>
+                <ComboBoxItem Content="1:30 PM"/>
+                <ComboBoxItem Content="2:00 PM"/>
+                <ComboBoxItem Content="2:30 PM"/>
+                <ComboBoxItem Content="3:00 PM"/>
+                <ComboBoxItem Content="3:30 PM"/>
+                <ComboBoxItem Content="4:00 PM"/>
+
+
+            </ComboBox>
+            <ComboBox Name="comboEndTime" HorizontalAlignment="Left" Margin="111,238,0,0" VerticalAlignment="Top" Width="212">
+                <ComboBoxItem Content="9:30 AM"/>
+                <ComboBoxItem Content="10:00 AM"/>
+                <ComboBoxItem Content="10:30 AM"/>
+                <ComboBoxItem Content="11:00 AM"/>
+                <ComboBoxItem Content="11:30 AM"/>
+                <ComboBoxItem Content="12:00 PM"/>
+                <ComboBoxItem Content="12:30 PM"/>
+                <ComboBoxItem Content="1:00 PM"/>
+                <ComboBoxItem Content="1:30 PM"/>
+                <ComboBoxItem Content="2:00 PM"/>
+                <ComboBoxItem Content="2:30 PM"/>
+                <ComboBoxItem Content="3:00 PM"/>
+                <ComboBoxItem Content="3:30 PM"/>
+                <ComboBoxItem Content="4:00 PM"/>
+                <ComboBoxItem Content="4:30 PM"/>
+                <ComboBoxItem Content="5:00 PM"/>
+            </ComboBox>
+            <GroupBox  Foreground="#FF0069C0" Name="grpDay" Header="Day" HorizontalAlignment="Left" Height="99" VerticalAlignment="Top" Width="273" Margin="352,129,0,0" BorderBrush="#FF7CBDDE" FontWeight="Bold">
+                <Grid  HorizontalAlignment="Left" Height="99" Margin="0,-10,-2,-12" VerticalAlignment="Top" Width="263">
+                    <Grid.ColumnDefinitions >
+                        <ColumnDefinition Width="24*"/>
+                        <ColumnDefinition Width="239*"/>
+                    </Grid.ColumnDefinitions>
+                    <CheckBox  Foreground="#FF0069C0" Name="chMonday" Content="Monday" HorizontalAlignment="Left" Margin="18,18,0,0" VerticalAlignment="Top" Grid.ColumnSpan="2"/>
+                    <CheckBox  Foreground="#FF0069C0" x:Name="chTuesday" Content="Tuesday" HorizontalAlignment="Left" Margin="18,43,0,0" VerticalAlignment="Top" Grid.ColumnSpan="2"/>
+                    <CheckBox  Foreground="#FF0069C0" Name="chWednesday" Content="Wednesday" HorizontalAlignment="Left" Margin="18,64,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.319,2.558" Grid.ColumnSpan="2"/>
+                    <CheckBox  Foreground="#FF0069C0" Name="chSaturday" Content="Saturday" HorizontalAlignment="Left" Margin="80.239,64,0,0" VerticalAlignment="Top" RenderTransformOrigin="1.187,2.619" Grid.Column="1"/>
+                    <CheckBox  Foreground="#FF0069C0" Name="chFriday" Content="Friday" HorizontalAlignment="Left" Margin="80.239,43,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.513,1.123" Grid.Column="1"/>
+                    <CheckBox  Foreground="#FF0069C0" Name="chThursday" Content="Thursday" HorizontalAlignment="Left" Margin="80.239,21,0,0" VerticalAlignment="Top" Grid.Column="1"/>
+                    <CheckBox  Foreground="#FF0069C0" Name="chSunday" Content="Sunday" HorizontalAlignment="Left" Margin="159.239,22,0,0" VerticalAlignment="Top" Grid.Column="1"/>
+                    <CheckBox  Foreground="#FF0069C0" x:Name="chWeekdays" Content="Weekdays" HorizontalAlignment="Left" Margin="159,43,0,0" VerticalAlignment="Top" Grid.Column="1" Checked="chWeekdays_Checked" Unchecked="chWeekdays_Unchecked"/>
+                </Grid>
+            </GroupBox>
+            <Label Content="Room" HorizontalAlignment="Left" Margin="352,250,0,0" VerticalAlignment="Top" Width="73" Height="33" FontSize="16" FontWeight="Bold" Foreground="#FF0069C0">
+            </Label>
+            <TextBox Name="tbRoom" HorizontalAlignment="Left" Height="27" Margin="454,256,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+            <Button Name="btnRefresh" Background="{x:Null}" BorderBrush="{x:Null}" Padding="0"  Foreground="#FF0069C0" Click="btnRefresh_Click" Margin="560,21,54,476" RenderTransformOrigin="0.5,0.5">
+                <materialDesign:PackIcon Kind="Refresh" Height="37" Width="46" />
+            </Button>
+            <ListView x:Name="lvSection" HorizontalAlignment="Left" Height="141" Margin="21,375,0,0" VerticalAlignment="Top" Width="604"  util:GridViewSort.AutoSort="True" SelectionChanged="lvSection_SelectionChanged" >
+                <ListView.ContextMenu>
+                    <ContextMenu AllowDrop="True">
+                        <MenuItem x:Name="itemDelete" Header="Delete" Click="itemDelete_Click"/>
+                    </ContextMenu>
+                </ListView.ContextMenu>
+                <ListView.View>
+
+                    <GridView>
+                        <GridViewColumn Header="Section Id" DisplayMemberBinding="{Binding Id}" util:GridViewSort.PropertyName="Id"/>
+                        <GridViewColumn Header="Start Date" DisplayMemberBinding="{Binding StartDate, StringFormat=d}" util:GridViewSort.PropertyName="StartDate"/>
+                        <GridViewColumn Header="End Date" DisplayMemberBinding="{Binding EndDate, StringFormat=d}" util:GridViewSort.PropertyName="EndDate"/>
+                        <GridViewColumn Header="Day" DisplayMemberBinding="{Binding Day}" util:GridViewSort.PropertyName="Day" />
+                        <GridViewColumn Header="Start Time" DisplayMemberBinding="{Binding StartTime}" util:GridViewSort.PropertyName="StartTime"/>
+                        <GridViewColumn Header="End Time" DisplayMemberBinding="{Binding EndTime}" util:GridViewSort.PropertyName="EndTime"/>
+                        <GridViewColumn Header="Teacher Id" DisplayMemberBinding="{Binding TeacherId}" util:GridViewSort.PropertyName="TeacherId"/>
+                        <GridViewColumn Header="Teacher Name" DisplayMemberBinding="{Binding Teacher.TeacherName}" util:GridViewSort.PropertyName="Teacher.TeacherName"/>
+                        <GridViewColumn Header="Room" DisplayMemberBinding="{Binding Room}" util:GridViewSort.PropertyName="Room"/>
+                    </GridView>
+
+                </ListView.View>
+            </ListView>
+
+        </Grid>
+    </Border>
+</Window>

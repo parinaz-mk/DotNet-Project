@@ -1,0 +1,39 @@
+DAILY SCRUM
+
+sql db host : cmsprojectserver.database.windows.net
+user: sqladmin
+password:123!@#qwe
+
+
+2020-12-18 Zahra Arablou
+1-Done
+-Discussed to choose a Project
+-Designed Database Tables
+-Desined User Interfaces
+-Created Tables in SSMS
+2-To Do
+-Modify User Interface and add some wizard
+-Finalize the proposal
+-Create 10 Cards in the backlog in Trello 
+3- need assistance
+---
+
+2020-12-18 Parinaz MalekTabrizi
+1-Done
+-Discussed to choose a Project
+-Designed Database Tables
+-Modified User Interfaces
+-Created a table in SSMS
+2-To Do
+-Redesign database and tables
+-Finalize the proposal
+-Create 10 Cards in the backlog in Trello 
+3- need assistance
+---
+
+
+ 
+
+
+
+

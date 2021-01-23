@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="2fd17347370b4eacbb8d0d40652c5121" Name="Diagram1" ZoomLevel="88">
+        <EntityTypeShape EntityType="CmsProjectModel.Course" Width="1.5" PointX="0.75" PointY="4" />
+        <EntityTypeShape EntityType="CmsProjectModel.Section" Width="1.5" PointX="3" PointY="3.125" />
+        <EntityTypeShape EntityType="CmsProjectModel.Student" Width="1.5" PointX="8.25" PointY="7.75" />
+        <EntityTypeShape EntityType="CmsProjectModel.Teacher" Width="1.5" PointX="0.875" PointY="7.125" />
+        <AssociationConnector Association="CmsProjectModel.FK__Section__CourseI__6E01572D" />
+        <AssociationConnector Association="CmsProjectModel.FK__Section__Teacher__6EF57B66" />
+        <EntityTypeShape EntityType="CmsProjectModel.Enrollment" Width="1.5" PointX="5.25" PointY="7.5" />
+        <AssociationConnector Association="CmsProjectModel.FK__Enrollmen__Secti__6FE99F9F" />
+        <AssociationConnector Association="CmsProjectModel.FK__Enrollmen__Stude__70DDC3D8" />
+        <EntityTypeShape EntityType="CmsProjectModel.Attendance" Width="1.5" PointX="5.25" PointY="3.25" />
+        <AssociationConnector Association="CmsProjectModel.FK__Attendanc__Secti__71D1E811" />
+        <AssociationConnector Association="CmsProjectModel.FK__Attendanc__Stude__72C60C4A" />
+        </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

@@ -1,0 +1,100 @@
+﻿<UserControl x:Class="CmsProject.UserControlTeacher"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:CmsProject"
+             mc:Ignorable="d" 
+             xmlns:util="clr-namespace:Wpf.Util"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             Height="auto" Width="auto">
+    <Grid>
+  
+            <materialDesign:TransitioningContent x:Name="TrainsitionigContentSlide" OpeningEffect="{materialDesign:TransitionEffect SlideInFromLeft, Duration=0:0:0.8}">
+                <Grid Height="612" Width="1302">
+                    <Grid Margin="-190,-48,196,48">
+                        <Label Content="Teacher Profile" HorizontalAlignment="Left" Margin="205,51,0,0" VerticalAlignment="Top" Width="342" Height="49" FontSize="36" FontWeight="Bold" FontFamily="Vijaya" Foreground="#FF0069C0"/>
+                        <Label Content="Hired Date" HorizontalAlignment="Left" Margin="205,213,0,0" VerticalAlignment="Top" Width="157" Height="33" FontSize="16" FontWeight="Bold" Foreground="#FF0069C0"/>
+                        <Label Content="Address" HorizontalAlignment="Left" Margin="634,119,0,0" VerticalAlignment="Top" Width="77" Height="33" FontSize="16" FontWeight="Bold" Foreground="#FF0069C0"/>
+                        <Label Content="Contact No" HorizontalAlignment="Left" Margin="205,258,0,0" VerticalAlignment="Top" Width="157" Height="33" FontSize="16" FontWeight="Bold" Foreground="#FF0069C0"/>
+                        <Label Content="Last Name" HorizontalAlignment="Left" Margin="205,166,0,0" VerticalAlignment="Top" Width="157" Height="33" FontSize="16" FontWeight="Bold" Foreground="#FF0069C0"/>
+                        <Label Content="First Name" HorizontalAlignment="Left" Margin="205,119,0,0" VerticalAlignment="Top" Width="157" Height="33" FontSize="16" FontWeight="Bold" Foreground="#FF0069C0"/>
+                        <Label  Content="Email" HorizontalAlignment="Left" Margin="208,313,0,0" VerticalAlignment="Top" Width="52" Height="33" FontSize="16" FontWeight="Bold" Foreground="#FF0069C0" RenderTransformOrigin="0.02,0.562"/>
+                        <Button x:Name="btAdd" Content="Add" HorizontalAlignment="Left" Margin="431,368,0,0" VerticalAlignment="Top" Width="88" Height="28" Background="#38a700" Click="btAdd_Click">
+                        </Button>
+                        <Button x:Name="btUpdate" Content="Update" HorizontalAlignment="Left" Margin="545,366,0,0" VerticalAlignment="Top" Width="88" RenderTransformOrigin="1.176,0.794" Height="28" Background="#ff7c1f" Click="btUpdate_Click">
+                        </Button>
+                        <Button Name="btDelete" Content="Delete" HorizontalAlignment="Left" Margin="661,364,0,0" VerticalAlignment="Top" Width="88" Height="28"  Background="#ff0700" RenderTransformOrigin="0.482,-0.126" Click="btDelete_Click">
+                        </Button>
+                    <Button Name="btnCSV" Click="btnCSV_Click" Background="{x:Null}" BorderBrush="{x:Null}" Padding="0" Foreground="Green"  Margin="901,366,355,205" RenderTransformOrigin="0.925,0.448" ToolTip="Export to CSV file">
+                        <materialDesign:PackIcon Kind="FileCsv" Height="33" Width="46" RenderTransformOrigin="0.222,1.692"/>
+                    </Button>
+                    <Button Name="btnRefresh" Background="{x:Null}" BorderBrush="{x:Null}" Padding="0" Foreground="#FF0069C0" Click="btnRefresh_Click" Margin="860,51,377,512" RenderTransformOrigin="0.5,0.5">
+                            <materialDesign:PackIcon Kind="Refresh" Height="37" Width="64"/>
+                        </Button>
+
+                        <Label Content="Number" HorizontalAlignment="Left" Margin="712,151,0,0" VerticalAlignment="Top" Foreground="#FF959090"/>
+                        <Label Content="Street" HorizontalAlignment="Left" Margin="634,204,0,0" VerticalAlignment="Top" Foreground="#FF959090"/>
+                        <Label HorizontalAlignment="Left" Margin="634,263,0,0" VerticalAlignment="Top" Foreground="#FF959090"/>
+                        <Label Content="Province" HorizontalAlignment="Left" Margin="634,325,0,0" VerticalAlignment="Top" Foreground="#FF959090"/>
+                        <Label Content="Code Postal" HorizontalAlignment="Left" Margin="797,325,0,0" VerticalAlignment="Top" Foreground="#FF959090"/>
+                    <ListView  Name="lvTeachers" HorizontalAlignment="Left" Height="160" Margin="205,418,0,0" VerticalAlignment="Top" Width="736" SelectionChanged="lvTeachers_SelectionChanged" util:GridViewSort.AutoSort="True"  ScrollViewer.VerticalScrollBarVisibility="Visible"
+          ScrollViewer.CanContentScroll="False">
+                        
+                            <ListView.View>
+                                <GridView>
+                                    <GridViewColumn Header="Id" Width="Auto" DisplayMemberBinding="{Binding Id}" util:GridViewSort.PropertyName="Id"/>
+                                    <GridViewColumn Header="First Name" Width="Auto" DisplayMemberBinding="{Binding FirstName}" util:GridViewSort.PropertyName="FirstName"/>
+                                    <GridViewColumn Header="Last Name" Width="Auto" DisplayMemberBinding="{Binding LastName}" util:GridViewSort.PropertyName="LastName"/>
+                                    <GridViewColumn Header="Hire Date" Width="Auto" DisplayMemberBinding="{Binding HireDate,StringFormat=d}" util:GridViewSort.PropertyName="HireDate"/>
+                                    <GridViewColumn Header="Phone" Width="Auto" DisplayMemberBinding="{Binding Phone}" util:GridViewSort.PropertyName="Phone"/>
+                                    <GridViewColumn Header="Email" Width="Auto" DisplayMemberBinding="{Binding Email}" util:GridViewSort.PropertyName="Email"/>
+                                    <GridViewColumn Header="Number" Width="Auto" DisplayMemberBinding="{Binding No}" util:GridViewSort.PropertyName="No"/>
+                                    <GridViewColumn Header="Street" Width="Auto" DisplayMemberBinding="{Binding Street}" util:GridViewSort.PropertyName="Street"/>
+                                    <GridViewColumn Header="City" Width="Auto" DisplayMemberBinding="{Binding City}" util:GridViewSort.PropertyName="City"/>
+                                    <GridViewColumn Header="Province" Width="Auto" DisplayMemberBinding="{Binding Province}" util:GridViewSort.PropertyName="Province"/>
+                                    <GridViewColumn Header="Postal Code" Width="Auto" DisplayMemberBinding="{Binding CodePostal}" util:GridViewSort.PropertyName="CodePostal"/>
+                                </GridView>
+                            </ListView.View>
+                        </ListView>
+                        <TextBox x:Name="tbFirstNameT" HorizontalAlignment="Left" Height="33" Margin="335,119,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="238">
+                            <TextBox.BorderBrush>
+                                <LinearGradientBrush EndPoint="0,20" MappingMode="Absolute" StartPoint="0,0">
+                                    <GradientStop Color="#FFABADB3" Offset="0.05"/>
+                                    <GradientStop Color="#FFE2E3EA" Offset="0.07"/>
+                                    <GradientStop Color="#FFE3E9EF" Offset="1"/>
+                                </LinearGradientBrush>
+                            </TextBox.BorderBrush>
+                        </TextBox>
+                        <TextBox x:Name="tbLastNameT" HorizontalAlignment="Left" Height="32" Margin="335,168,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="238"/>
+                        <DatePicker x:Name="dateHireDate" HorizontalAlignment="Left" Margin="335,222,0,0" VerticalAlignment="Top" Width="238"/>
+                        <TextBox x:Name="tbContact" HorizontalAlignment="Left" Height="30" Margin="335,261,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="238"/>
+                        <TextBox x:Name="tbEmail" HorizontalAlignment="Left" Height="33" Margin="335,313,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="238"/>
+                        <TextBox Name="tbNumber" HorizontalAlignment="Left" Height="34" Margin="716,125,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="225" Foreground="Black" />
+                        <TextBox  x:Name="tbStreet" HorizontalAlignment="Left" Height="33" Margin="634,179,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="307" Foreground="Black" />
+                        <TextBox  x:Name="tbCity" HorizontalAlignment="Left" Height="33" Margin="634,235,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="307" Foreground="Black"/>
+                        <ComboBox Name="comboProvince" HorizontalAlignment="Left" Margin="634,297,0,0" VerticalAlignment="Top" Width="158" Height="33">
+                            <ComboBoxItem Content="QC"/>
+                            <ComboBoxItem Content="ON"/>
+                            <ComboBoxItem Content="NL"/>
+                            <ComboBoxItem Content="PE"/>
+                            <ComboBoxItem Content="NS"/>
+                            <ComboBoxItem Content="NB"/>
+                            <ComboBoxItem Content="MB"/>
+                            <ComboBoxItem Content="SK"/>
+                            <ComboBoxItem Content="AB"/>
+                            <ComboBoxItem Content="BC"/>
+                            <ComboBoxItem Content="YT"/>
+                            <ComboBoxItem Content="NT"/>
+                            <ComboBoxItem Content="NU"/>
+
+                        </ComboBox>
+                        <TextBox x:Name="tbCodePostal" HorizontalAlignment="Left" Height="33" Margin="797,297,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="144" Foreground="Black"/>
+                        <Label Content="City" HorizontalAlignment="Left" Margin="634,263,0,0" VerticalAlignment="Top" Foreground="#FF959090"/>
+
+
+                    </Grid>
+                </Grid>
+            </materialDesign:TransitioningContent>
+        </Grid>
+</UserControl>

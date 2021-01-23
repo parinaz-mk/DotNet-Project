@@ -1,0 +1,38 @@
+﻿<UserControl x:Class="CmsProject.UserControlEnrollment"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:util="clr-namespace:Wpf.Util"
+             mc:Ignorable="d" 
+           xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             Height="auto" Width="auto">
+    <Grid>
+        <materialDesign:TransitioningContent x:Name="TrainsitionigContentSlide" OpeningEffect="{materialDesign:TransitionEffect SlideInFromLeft, Duration=0:0:0.8}">
+            <Grid Height="612" Width="1302">
+                <Grid Margin="-176,10,182,-10" RenderTransformOrigin="0.457,0.53">
+                    <Label Content="Enrollement" HorizontalAlignment="Left" Margin="215,20,0,0" VerticalAlignment="Top" Width="342" Height="50" FontSize="36" FontWeight="Bold" FontFamily="Vijaya" Foreground="#FF0069C0"/>
+                    <Label HorizontalAlignment="Left" Margin="644,172,0,0" VerticalAlignment="Top" Width="114" Height="33" FontSize="16" FontWeight="Bold" Foreground="#FF0069C0" Content="Course Name"/>
+
+                    <ListView Name="lvCourse" HorizontalAlignment="Left" Height="210" Margin="215,220,0,0" VerticalAlignment="Top" Width="721" util:GridViewSort.AutoSort="True">
+                        <ListView.View>
+                            <GridView>
+                                <GridViewColumn Header="ID" Width="auto" DisplayMemberBinding="{Binding Id}" util:GridViewSort.PropertyName="Id"/>
+                                <GridViewColumn Header="Course Title" Width="auto" DisplayMemberBinding="{Binding CourseTitle}" util:GridViewSort.PropertyName="CourseTitle"/>
+                                <GridViewColumn Header="Description" Width="auto" DisplayMemberBinding="{Binding Description}" util:GridViewSort.PropertyName="Description"/>
+                            </GridView>
+                        </ListView.View>
+                    </ListView>
+                    <Label HorizontalAlignment="Left" Margin="213,172,0,0" VerticalAlignment="Top" Width="112" Height="33" FontSize="16" FontWeight="Bold" Foreground="#FF0069C0" Content="Course Code"/>
+                    <TextBox TextChanged="tbCourseCode_TextChanged" Name="tbCourseCode" HorizontalAlignment="Left" Height="30" Margin="330,175,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="160"/>
+                    <TextBox TextChanged="tbCourseName_TextChanged" Name="tbCourseName" HorizontalAlignment="Left" Height="30" Margin="776,175,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="160"/>
+                    <Button Name="btnNext" Click="ButtonNext_Click" Content="Next" HorizontalAlignment="Left" Margin="794,452,0,0" VerticalAlignment="Top" Width="142" Height="50" Background="#FF0069C0" Foreground="White" RenderTransformOrigin="0.013,-0.737" FontSize="18"/>
+                    <Button Click="btnRefresh_Click" Name="btnRefresh" Background="{x:Null}" BorderBrush="{x:Null}" Padding="0" Foreground="#FF0069C0" Margin="882,20,355,543" RenderTransformOrigin="0.5,0.5">
+                        <materialDesign:PackIcon Kind="Refresh" Height="37" Width="64" />
+                    </Button>
+                    <Label HorizontalAlignment="Left" Margin="213,134,0,0" VerticalAlignment="Top" Width="195" Height="33" FontSize="16" FontWeight="Bold" Foreground="#FF0069C0" Content="Search by :"/>
+                </Grid>
+            </Grid>
+        </materialDesign:TransitioningContent>
+    </Grid>
+</UserControl>

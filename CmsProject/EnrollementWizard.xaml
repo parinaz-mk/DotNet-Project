@@ -1,0 +1,121 @@
+﻿<Window x:Class="CmsProject.EnrollementWizard"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:util="clr-namespace:Wpf.Util"
+        mc:Ignorable="d" WindowStartupLocation="CenterOwner" ResizeMode="NoResize" WindowStyle="None"
+        Title="Enrollment-Section Selection" Height="450" Width="615" Background="LightGray">
+    <Border BorderBrush="#FF0069C0" BorderThickness="3" Grid.ColumnSpan="2">
+        <Grid>
+            <StackPanel VerticalAlignment="Top">
+                <Grid Background="#FF0069C0" Height="10"/>
+            </StackPanel>
+            <Grid Name="gridSection">
+                <GroupBox FontWeight="Bold" Foreground="red" Header="Course" HorizontalAlignment="Left" Height="101" Margin="10,109,0,0" VerticalAlignment="Top" Width="589">
+                    <StackPanel>
+                        <Label Name="lblCourseId" Foreground="#FF0069C0" FontWeight="Bold" Content="ID:" HorizontalAlignment="Left" VerticalAlignment="Top" Width="200"/>
+                        <Label Name="lblCourseTitle" Foreground="#FF0069C0" FontWeight="Bold" Content="Title:" HorizontalAlignment="Left" VerticalAlignment="Top" Width="200"/>
+                        <Label Name="lblCourseDesc" Foreground="#FF0069C0" FontWeight="Bold" Content="Description:" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="3.321,-0.885" Width="200"/>
+                    </StackPanel>
+                </GroupBox>
+                <ListView Name="lvSection" HorizontalAlignment="Left" Height="122" Margin="10,249,0,0" VerticalAlignment="Top" Width="595" util:GridViewSort.AutoSort="True">
+                    <ListView.View >
+                        <GridView >
+                            <GridViewColumn  Header="ID" Width="auto" DisplayMemberBinding="{Binding Id}" util:GridViewSort.PropertyName="Id"/>
+                            <GridViewColumn Header="Day" Width="auto" DisplayMemberBinding="{Binding Day}" util:GridViewSort.PropertyName="Day"/>
+                            <GridViewColumn Header="Start Date" Width="auto" DisplayMemberBinding="{Binding StartDate,StringFormat=d}" util:GridViewSort.PropertyName="StartDate"/>
+                            <GridViewColumn Header="End Date" Width="auto" DisplayMemberBinding="{Binding EndDate,StringFormat=d}" util:GridViewSort.PropertyName="EndDate"/>
+                            <GridViewColumn Header="Start Time" Width="auto" DisplayMemberBinding="{Binding StartTime}" util:GridViewSort.PropertyName="StartTime"/>
+                            <GridViewColumn Header="End Time" Width="auto" DisplayMemberBinding="{Binding EndTime}" util:GridViewSort.PropertyName="EndTime"/>
+                            <GridViewColumn Header="Capacity" Width="auto" DisplayMemberBinding="{Binding Room}" util:GridViewSort.PropertyName="Room"/>
+                            <GridViewColumn Header="Total registerd" Width="auto" DisplayMemberBinding="{Binding Spot}" util:GridViewSort.PropertyName="Spot"/>
+                            <GridViewColumn Header="Teacher name" Width="auto" DisplayMemberBinding="{Binding Teacher.TeacherName}" util:GridViewSort.PropertyName="FirstName"/>
+                        </GridView>
+                    </ListView.View>
+                </ListView>
+                <Label Foreground="#FF0069C0" Content="Select a section:" HorizontalAlignment="Left" Margin="10,215,0,0" VerticalAlignment="Top" Width="177" FontWeight="Bold" FontSize="14"/>
+                <Label Content="Section Selection" HorizontalAlignment="Left" Margin="10,27,0,0" VerticalAlignment="Top" Width="342" Height="47" FontSize="36" FontWeight="Bold" FontFamily="Vijaya" Foreground="#FF0069C0"/>
+                <Button Click="ButtonSectionNext_Click" Content="Next" HorizontalAlignment="Left" Margin="325,376,0,0" VerticalAlignment="Top" Width="96" Height="40" Background="#FF0069C0" Foreground="White"/>
+                <Button Click="ButtonSectionBack_Click" Content="Back" HorizontalAlignment="Left" Margin="192,376,0,0" VerticalAlignment="Top" Width="96" Height="40" Background="#FF0069C0" Foreground="White"/>
+            </Grid>
+            <Grid Name="gridStudent" >
+                <Label Content="Student Selection" HorizontalAlignment="Left" Margin="10,27,0,0" VerticalAlignment="Top" Width="342" Height="47" FontSize="36" FontWeight="Bold" FontFamily="Vijaya" Foreground="#FF0069C0"/>
+                <ListView Name="lvStudent" HorizontalAlignment="Left" Height="122" Margin="7,89,0,0" VerticalAlignment="Top" Width="598" util:GridViewSort.AutoSort="True">
+                    <ListView.View>
+                        <GridView >
+                            <GridViewColumn Header="ID" Width="auto" DisplayMemberBinding="{Binding Id}" util:GridViewSort.PropertyName="Id"/>
+                            <GridViewColumn Header="Name" Width="auto" DisplayMemberBinding="{Binding FirstName}" util:GridViewSort.PropertyName="FirstName"/>
+                            <GridViewColumn Header="Last Name" Width="auto" DisplayMemberBinding="{Binding LastName}" util:GridViewSort.PropertyName="LastName"/>
+                            <GridViewColumn Header="Phone No." Width="auto" DisplayMemberBinding="{Binding Phone}" util:GridViewSort.PropertyName="Phone"/>
+                            <GridViewColumn Header="Email" Width="auto" DisplayMemberBinding="{Binding Email}" util:GridViewSort.PropertyName="Email"/>
+                            <GridViewColumn Header="No." Width="auto" DisplayMemberBinding="{Binding No}" util:GridViewSort.PropertyName="No"/>
+                            <GridViewColumn Header="Street" Width="auto" DisplayMemberBinding="{Binding Street}" util:GridViewSort.PropertyName="Street"/>
+                            <GridViewColumn Header="City" Width="auto" DisplayMemberBinding="{Binding City}" util:GridViewSort.PropertyName="City"/>
+                            <GridViewColumn Header="Province" Width="auto" DisplayMemberBinding="{Binding Province}" util:GridViewSort.PropertyName="Province"/>
+                            <GridViewColumn Header="Postal Code" Width="auto" DisplayMemberBinding="{Binding CodePostal}" util:GridViewSort.PropertyName="CodePostal"/>
+                        </GridView>
+                    </ListView.View>
+                </ListView>
+                <ListView Name="lvSelectedStudents" HorizontalAlignment="Left" Height="122" Margin="7,249,0,0" VerticalAlignment="Top" Width="598"  util:GridViewSort.AutoSort="True">
+                    <ListView.View>
+                        <GridView >
+                            <GridViewColumn Header="ID" Width="auto" DisplayMemberBinding="{Binding Id}" util:GridViewSort.PropertyName="Id"/>
+                            <GridViewColumn Header="Name" Width="auto" DisplayMemberBinding="{Binding Student.FirstName}" util:GridViewSort.PropertyName="FirstName"/>
+                            <GridViewColumn Header="Last Name" Width="auto" DisplayMemberBinding="{Binding LastName}" util:GridViewSort.PropertyName="LastName"/>
+                            <GridViewColumn Header="Phone No." Width="auto" DisplayMemberBinding="{Binding Phone}" util:GridViewSort.PropertyName="Phone"/>
+                            <GridViewColumn Header="Email" Width="auto" DisplayMemberBinding="{Binding Email}" util:GridViewSort.PropertyName="Email"/>
+                            <GridViewColumn Header="No." Width="auto" DisplayMemberBinding="{Binding No}" util:GridViewSort.PropertyName="No"/>
+                            <GridViewColumn Header="Street" Width="auto" DisplayMemberBinding="{Binding Street}" util:GridViewSort.PropertyName="Street"/>
+                            <GridViewColumn Header="City" Width="auto" DisplayMemberBinding="{Binding City}" util:GridViewSort.PropertyName="City"/>
+                            <GridViewColumn Header="Province" Width="auto" DisplayMemberBinding="{Binding Province}" util:GridViewSort.PropertyName="Province"/>
+                            <GridViewColumn Header="Postal Code" Width="auto" DisplayMemberBinding="{Binding CodePostal}" util:GridViewSort.PropertyName="CodePostal"/>
+                        </GridView>
+                    </ListView.View>
+                </ListView>
+                <Button Click="ButtonAdd_Click" Content="Add" HorizontalAlignment="Left" Margin="517,55,0,0" VerticalAlignment="Top" Width="88" Height="28" Background="#38a700"/>
+                <Button Click="ButtonDelete_Click" Content="Delete" HorizontalAlignment="Left" Margin="517,216,0,0" VerticalAlignment="Top" Width="88" Height="28"  Background="#ff0700" RenderTransformOrigin="0.482,-0.126"/>
+                <Button Click="ButtonStudentBack_Click" Content="Back" HorizontalAlignment="Left" Margin="193,376,0,0" VerticalAlignment="Top" Width="96" Height="40" Background="#FF0069C0" Foreground="White"/>
+                <Button Click="ButtonAddSelection_Click" Content="Add Selection" HorizontalAlignment="Left" Margin="326,376,0,0" VerticalAlignment="Top" Width="96" Height="40" Background="#FF0069C0" Foreground="White"/>
+            </Grid>
+            <Grid Name="gridConfimation">
+                <Label Content="Enrollment Summery" HorizontalAlignment="Left" Margin="10,27,0,0" VerticalAlignment="Top" Width="342" Height="47" FontSize="24" FontWeight="Bold" FontFamily="Vijaya" Foreground="#FF0069C0"/>
+
+                <GroupBox FontWeight="Bold" Foreground="red" Header="Students" HorizontalAlignment="Left" Height="143" VerticalAlignment="Top" Width="592" Margin="7,225,0,0">
+                    <ListView Name="lvStdConfirm" HorizontalAlignment="Left" Height="100" Margin="0,10,-2,0" VerticalAlignment="Top" Width="582" util:GridViewSort.AutoSort="True">
+                        <ListView.View>
+                            <GridView>
+                                <GridViewColumn Header="ID" Width="auto" DisplayMemberBinding="{Binding Id}" util:GridViewSort.PropertyName="Id"/>
+                                <GridViewColumn Header="Name" Width="auto" DisplayMemberBinding="{Binding FirstName}" util:GridViewSort.PropertyName="FirstName"/>
+                                <GridViewColumn Header="Last Name" Width="auto" DisplayMemberBinding="{Binding LastName}" util:GridViewSort.PropertyName="LastName"/>
+                            </GridView>
+                        </ListView.View>
+                    </ListView>
+                </GroupBox>
+                <GroupBox FontWeight="Bold" Foreground="red" Header="Course" HorizontalAlignment="Left" Height="101" Margin="10,76,0,0" VerticalAlignment="Top" Width="253">
+                    <StackPanel>
+                        <Label Name="lblCourseIdConf" Foreground="#FF0069C0" FontWeight="Bold" Content="ID:" HorizontalAlignment="Left" VerticalAlignment="Top" Width="200"/>
+                        <Label Name="lblCourseTitleConf" Foreground="#FF0069C0" FontWeight="Bold" Content="Title:" HorizontalAlignment="Left" VerticalAlignment="Top" Width="200"/>
+                        <Label Name="lblCourseDescConf" Foreground="#FF0069C0" FontWeight="Bold" Content="Description:" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="3.321,-0.885" Width="200"/>
+                    </StackPanel>
+                </GroupBox>
+                <GroupBox FontWeight="Bold" Foreground="red" Header="Section" HorizontalAlignment="Left" Height="149" Margin="268,76,0,0" VerticalAlignment="Top" Width="331">
+                    <StackPanel>
+                        <Label Name="lblSectionId" Foreground="#FF0069C0" FontWeight="Bold" Content="ID:" HorizontalAlignment="Left" VerticalAlignment="Top" Width="252"/>
+                        <Label Name="lblSectionDays" Foreground="#FF0069C0" FontWeight="Bold" Content="Days:" HorizontalAlignment="Left" VerticalAlignment="Top" Width="252"/>
+                        <Label Name="lblSectionDate" Foreground="#FF0069C0" FontWeight="Bold" Content="From - To:" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="3.321,-0.885" Width="252"/>
+                        <Label Name="lblSectionTime" Foreground="#FF0069C0" FontWeight="Bold" Content="From - To:" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="3.321,-0.885" Width="252"/>
+                    </StackPanel>
+                </GroupBox>
+                <Button Click="BtnConfirm_Click" Background="#38a700" Name="btnConfirm" Content="Confirm" HorizontalAlignment="Left" Margin="324,376,0,0" VerticalAlignment="Top" Width="96" Height="40" RenderTransformOrigin="2.665,0.376"/>
+                <Button Click="BtnCancel_Click" Background="red" Name="btnCancel" Content="Cancel"  HorizontalAlignment="Left" Margin="7,376,0,0" VerticalAlignment="Top" Width="57" Height="40" RenderTransformOrigin="0.527,-0.224"/>
+                <GroupBox FontWeight="Bold" Foreground="red" Header="Teacher:" HorizontalAlignment="Left" Height="48" Margin="10,177,0,0" VerticalAlignment="Top" Width="253">
+                    <StackPanel>
+                        <Label Name="lblTeacherName" Foreground="#FF0069C0" FontWeight="Bold" Content="Name:" HorizontalAlignment="Left" VerticalAlignment="Top" Width="200"/>
+                    </StackPanel>
+                </GroupBox>
+                <Button Click="BtnConfirmBack_Click" Background="Yellow" x:Name="btnCancel_Copy" Content="Back"  HorizontalAlignment="Left" Margin="192,376,0,0" VerticalAlignment="Top" Width="96" Height="40" RenderTransformOrigin="0.527,-0.224"/>
+            </Grid>
+        </Grid>
+    </Border>
+</Window>

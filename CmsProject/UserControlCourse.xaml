@@ -1,0 +1,45 @@
+﻿<UserControl x:Class="CmsProject.UserControlCourse"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:util="clr-namespace:Wpf.Util"
+             xmlns:local="clr-namespace:CmsProject"
+             mc:Ignorable="d" 
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             Height="auto" Width="auto">
+    <Grid>
+        <materialDesign:TransitioningContent x:Name="TrainsitionigContentSlide" OpeningEffect="{materialDesign:TransitionEffect SlideInFromLeft, Duration=0:0:0.8}">
+            <Grid Height="612" Width="1302">
+                <Grid Margin="-176,10,182,-10">
+                    <Label Content="Course" HorizontalAlignment="Left" Margin="215,31,0,0" VerticalAlignment="Top" Width="342" Height="47" FontSize="36" FontWeight="Bold" FontFamily="Vijaya" Foreground="#FF0069C0"/>
+                    <Label Content="Description" HorizontalAlignment="Left" Margin="222,200,0,0" VerticalAlignment="Top" Width="157" Height="34" FontSize="16" FontWeight="Bold" Foreground="#FF0069C0"/>
+                    <Label Content="Title" HorizontalAlignment="Left" Margin="215,104,0,0" VerticalAlignment="Top" Width="157" Height="33" FontSize="16" FontWeight="Bold" Foreground="#FF0069C0"/>
+                    <TextBox Name="tbDescription" HorizontalAlignment="Left" Height="176" Margin="222,232,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="300"/>
+                    <TextBox Name="tbTitle" HorizontalAlignment="Left" Height="33" Margin="222,137,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="300"/>
+                    <Button Name="btnAddSection" Content="Add Section" HorizontalAlignment="Left" Margin="703,464,0,0" VerticalAlignment="Top" Width="151" Height="40" Background="#FF0069C0" Foreground="white" RenderTransformOrigin="0.882,1.857" FontSize="16" FontWeight="Bold" Click="btnAddSection_Click"/>
+                    <Button Name="btnAdd" Content="Add" HorizontalAlignment="Left" Margin="242,465,0,0" VerticalAlignment="Top" Width="88" Height="42" Background="#38a700" Click="btnAdd_Click">
+                    </Button>
+                    <Button Name="btnUpdate"  Content="Update" HorizontalAlignment="Left" Margin="354,465,0,0" VerticalAlignment="Top" Width="88" RenderTransformOrigin="1.176,0.794" Height="42" Background="#ff7c1f" Click="btnUpdate_Click">
+                    </Button>
+                    <Button Name="btnDelete" Content="Delete" HorizontalAlignment="Left" Margin="469,465,0,0" VerticalAlignment="Top" Width="88" Height="42"  Background="#ff0700" RenderTransformOrigin="0.482,-0.126" Click="btnDelete_Click"></Button>
+                    <Button Name="btnRefresh" Background="{x:Null}" BorderBrush="{x:Null}" Padding="0" Foreground="#FF0069C0" Click="btnRefresh_Click" Margin="882,20,355,543" RenderTransformOrigin="0.5,0.5">
+                        <materialDesign:PackIcon Kind="Refresh" Height="37" Width="64"/>
+                    </Button>
+                    <Button Name="btnCSV" Click="btnCSV_Click" Background="{x:Null}" BorderBrush="{x:Null}" Padding="0" Foreground="Green"  Margin="901,91,355,480" RenderTransformOrigin="2.129,0.425" ToolTip="Export to CSV file">
+                        <materialDesign:PackIcon Kind="FileCsv" Height="33" Width="46" RenderTransformOrigin="0.222,1.692"/>
+                    </Button>
+                    <ListView Name="lvCourses" HorizontalAlignment="Left" Height="291" Margin="580,137,0,0" VerticalAlignment="Top" Width="361" SelectionChanged="lvCourses_SelectionChanged">
+                        <ListView.View>
+                            <GridView>
+                                <GridViewColumn Header="Id" DisplayMemberBinding="{Binding Id}"/>
+                                <GridViewColumn Header="Course Title" DisplayMemberBinding="{Binding CourseTitle}"/>
+                                <GridViewColumn Header="Description" DisplayMemberBinding="{Binding Description}"/>
+                            </GridView>
+                        </ListView.View>
+                    </ListView>
+                </Grid>
+            </Grid>
+        </materialDesign:TransitioningContent>
+    </Grid>
+</UserControl>
